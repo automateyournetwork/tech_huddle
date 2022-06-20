@@ -1,0 +1,33 @@
+devices:
+    dist-rtr01:
+      alias: 'Distribution'
+      type: IOS-XE
+      os: 'iosxe'
+      platform: csr1000v
+      credentials:
+        default:
+          username: cisco
+          password: cisco
+      connections:        
+        cli:
+          protocol: ssh
+          ip: 10.10.20.175
+          port: 22
+          arguments:
+            connection_timeout: 360
+    dist-sw01:
+      alias: 'Access'
+      type: NXOS
+      os: 'nxos'
+      platform: n9k
+      credentials:
+        default:
+          username: cisco
+          password: cisco
+      connections:        
+        cli:
+          protocol: ssh
+          ip: 10.10.20.177
+          port: 22
+          arguments:
+            connection_timeout: 360            

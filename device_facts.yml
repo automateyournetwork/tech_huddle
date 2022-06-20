@@ -1,0 +1,25 @@
+---
+
+- name: Tech_Huddle_Playbook
+  hosts: DISTRIBUTION
+  tasks:
+  - name: Gather IOS Facts
+    cisco.ios.ios_facts:
+      gather_subset: all
+    register: ios_facts
+
+  - name: Print All Available IOS Facts
+    ansible.builtin.debug:
+      var: ios_facts
+
+- name: Tech_Huddle_Playbook
+  hosts: ACCESS
+  tasks:
+  - name: Gather NXOS Facts
+    cisco.nxos.nxos_facts:
+      gather_subset: all
+    register: nxos_facts
+    
+  - name: Print All Available NXOS Facts
+    ansible.builtin.debug:
+      var: nxos_facts
